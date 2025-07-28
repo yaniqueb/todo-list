@@ -20,7 +20,7 @@ function addTask(event){
     li.appendChild(span)
     //clears the input box so it is ready for the next task 
     inputBox.value = "";
-  
+    saveData();
         return false; // Prevent form submission
 }
 
@@ -29,8 +29,19 @@ function addTask(event){
 todoList.addEventListener("click", function(e){
   if(e.target.tagName === "LI"){
     e.target.classList.toggle("completed");
+    saveData();
   } //Delete Items
   else if(e.target.tagName === "SPAN"){
     e.target.parentElement.remove();
+    saveData();
   }
 }, false);
+//This functions saves your list data in your local browser to prevent losing your list because of a browser refresh
+function saveData(){
+  localStorage.setItem("data", todoList.innerHTML);
+}
+// This function retrieves your stored data to display back to you
+function showTask(){
+  todoList.innerHTML = localStorage.getItem("data");
+}
+showTask();

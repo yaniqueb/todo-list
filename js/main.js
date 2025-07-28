@@ -8,7 +8,6 @@ function addTask(event){
     if (!event.target.checkValidity()) {
         return true; // Allow default behavior (show validation message)
     }
-    
     event.preventDefault(); // Now prevent normal submission since form is valid
     //create the todo item    
     let li = document.createElement("li");

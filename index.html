@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Your description goes here" />
+    <meta name="keywords" content="one, two, three" />
+
+    <title>Todo App</title>
+
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header></header>
+    <section class="todo-app">
+      <main>
+        <h2>To-Do List <img src="" alt="" /></h2>
+        <form onsubmit="addTask(event);">
+          <input
+            type="text"
+            id="input-box"
+            placeholder="Create a new todo item..."
+            aria-required="true"
+            required
+          />
+          <button type="submit">Add</button>
+        </form>
+      </main>
+      <section>
+        <ul id="todo-list" onclick="completeStatus(event)">
+          <!-- javascript injected here-->
+        </ul>
+      </section>
+    </section>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

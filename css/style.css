@@ -1,0 +1,133 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     width: 100%;
+     min-height: 100vh;
+     background: linear-gradient(135deg, #b0c1e3, #c5a7cb);
+     padding: 10px;
+}
+main {
+     width: 100%;
+     max-width: 540px;
+     background: #fff;
+     margin: 100px auto 20px;
+     padding: 40px 30px 70px;
+     border-radius: 10px;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+/* header {
+
+} 
+
+
+footer {
+
+} */
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+h2 {
+     color: #002765;
+     display: flex;
+     align-items: center;
+     margin-bottom: 20px;
+}
+
+form {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     background: #edeef0;
+     border-radius: 30px;
+     padding-left: 20px;
+     margin-bottom: 25px;
+}
+
+input {
+     flex: 1;
+     background: transparent;
+     padding: 1rem;
+     font-weight: 14px;
+}
+
+button {
+     padding: 1rem 3.125rem;
+     background: #9e39d4;
+     color: #fff;
+     font-size: 1rem;
+     cursor: pointer;
+     border-radius: 2.5rem;
+}
+
+li {
+     list-style: none;
+     font-size: 1.25rem;
+     padding: 12px 8px 12px 50px;
+     user-select: none;
+     cursor: pointer;
+     position: relative;
+}
+
+li span {
+     background: center / contain no-repeat url(/images/icon-cross.svg);
+     position: absolute;
+     right: 0;
+     top: 8px;
+     width: 28px;
+     height: 28px;
+     border-radius: 25%
+}
+
+li span:hover {
+     background: center / contain no-repeat url(/images/icon-cross.svg),#edeef0;
+     border: 2px solid rgb(167, 166, 166);
+}
+
+li::before {
+     content: '';
+     position: absolute;
+     height: 28px;
+     width: 28px;
+     border: 2px solid rgb(167, 166, 166);
+     border-radius: 50%;
+     top: 8px;
+     left: 8px;
+}
+
+li.completed {
+     color: #a9a6a6;
+     text-decoration: line-through;
+}
+
+li.completed::before {
+     background: url(/images/icon-check.svg), linear-gradient(135deg, #5cb0fa, #9855F6);
+     background-repeat: no-repeat;
+     background-position: center;   
+}

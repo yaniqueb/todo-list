@@ -9,34 +9,27 @@ function addTask(event){
         return true; // Allow default behavior (show validation message)
     }
     
-    event.preventDefault(); // Now prevent submission since form is valid
-        
+    event.preventDefault(); // Now prevent normal submission since form is valid
+    //create the todo item    
     let li = document.createElement("li");
     li.innerHTML = inputBox.value;
     todoList.appendChild(li);
-
+    //add delete button
     let span = document.createElement("span");
     span.innerHTML = (" ");
     li.appendChild(span)
-
+    //clears the input box so it is ready for the next task 
     inputBox.value = "";
   
-    
-    return false; // Prevent form submission
-  }
-
-// This function adds the event toggle styling to the list item on click
-function completeStatus(event){
-  if (event.target.tagName=== 'LI') {
-    event.target.classList.toggle("completed");
-  }
+        return false; // Prevent form submission
 }
 
-// This function adds a click event to remove the list item by clicking the span
+// This code adds an event listener to the todo list element that handles two different types of clicks:
+//toggle completion
 todoList.addEventListener("click", function(e){
   if(e.target.tagName === "LI"){
-    e.target.classList.toggle("checked");
-  }
+    e.target.classList.toggle("completed");
+  } //Delete Items
   else if(e.target.tagName === "SPAN"){
     e.target.parentElement.remove();
   }
